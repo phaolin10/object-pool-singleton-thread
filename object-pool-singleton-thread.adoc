@@ -25,46 +25,46 @@ stadyuma ait 10 kapı açılmış olsaydı taraftarlar stadyuma daha fazla bekle
 
 Başlangıç olarak problemimizde stadyum 1 tane olmak zorunda olduğu için Singleton Pattern kullanılmıştır.
 
-image::../public/images/Stadium_singleton.png[]
+image::./public/images/Stadium_singleton.png[]
 
 Yazmış olduğum "StadiumDemo" classında stadyum kapılarının 10 adet olduğu(pool içerisinde
 minimum 10 adet kapı) belirtilmiştir. (Stadyuma maç sırasında yeni kapı açılmasının mümkün olduğunu varsayalım)
 
-image::../public/images/setUp.png[]
+image::./public/images/setUp.png[]
 
 Buna rağmen işlem yapacak thread sayımızın (kapı sayısının) ise 15 olduğunu varsayalım.
 
-image::../public/images/setUp2.png[]
+image::./public/images/setUp2.png[]
 
 Açılan her kapıdan taraftarlar girmeye devam edebilir. Ta ki kapılardaki yoğunluk azalana kadar. Yoğunluk azaldıktan
 sonra ise kapılar (threadler) tekrar yoğunluk olana kadar sırayla kapanmaktadır. Tekrar yoğunluk olur ise sırada bekleyen
 threadler yeni kapıları açmakla görevlidir.
 
-image::../public/images/open_gate.png[]
+image::./public/images/open_gate.png[]
 
 Son olarak kodu çalıştırdığımız zaman ise çıktılarımıza bakıp senaryomuzu tamamlayalım.
 
 -> İlk olarak stadyumdaki kapılar açıldı.
 
-image::../public/images/gate_opened.png[]
+image::./public/images/gate_opened.png[]
 
 -> Stadyum kapıları kullanılabilir duruma getirildi.
 
-image::../public/images/gate_borrowed.png[]
+image::./public/images/gate_borrowed.png[]
 
 -> Taraftarlar kapılardan girişe başladı.
 
-image::../public/images/fans_enter.png[]
+image::./public/images/fans_enter.png[]
 
 -> Sırası biten kapılar kapatılmaya başlandı.
 
-image::../public/images/gate_closed.png[]
+image::./public/images/gate_closed.png[]
 
 -> Kapatılan kapılar yoğunluk oluştukça açıldı.
 
-image::../public/images/gate_opened_again.png[]
+image::./public/images/gate_opened_again.png[]
 
-|| ismail coşkun 180201160
+|| ismail coşkun
 
 
 
