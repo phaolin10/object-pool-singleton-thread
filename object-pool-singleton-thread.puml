@@ -1,0 +1,34 @@
+@startuml
+class StadiumDemo {
+- Stadium pool
+- AtomicLong processNo
++ void setUp()
++ void tearDown()
++ void testStadium()
+}
+class OpenThread {
+- Stadium pool
+- ınt threadNumber
++ void run()
+}
+abstract class Stadium {
+- {static} ConcurrentLinkedQueue<StadiumGate> gatePool
+- ScheduledExecutorService scheduledExecutorService
+# {abstract}StadiumGate openGate()
+- void initializeGatePool(ınt)
++ {static} ConcurrentLinkedQueue<StadiumGate> getInstance()
++ StadiumGate borrowGate()
++ void returnGate(StadiumGate)
++ void closeStadium()
+}
+class Main {
++ {static} void main(String[])
+}
+class StadiumGate {
+- long gateNo
++ long getGateNo()
+}
+
+
+Thread <|-- OpenThread
+@enduml
